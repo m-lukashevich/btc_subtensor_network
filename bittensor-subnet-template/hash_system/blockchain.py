@@ -6,7 +6,7 @@ from hash_system.block import Block
 class Blockchain:
     def __init__(self):
         self.sync_chain()
-        self.difficulty = 5
+        self.difficulty = 4
 
     def sync_chain(self):
         self.chain = [self.create_genesis_block()]

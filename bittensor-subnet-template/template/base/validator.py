@@ -143,6 +143,7 @@ class BaseValidatorNeuron(BaseNeuron):
             while True:
                 bt.logging.info(f"step({self.step}) block({self.block})")
 
+                print('while')
                 # Run multiple forwards concurrently.
                 self.loop.run_until_complete(self.concurrent_forward())
 

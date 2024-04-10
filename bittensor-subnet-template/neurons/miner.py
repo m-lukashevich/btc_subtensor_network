@@ -43,7 +43,7 @@ class Miner(BaseMinerNeuron):
     """
 
     def __init__(self, config=None):
-        # bt.logging._logger._cache[20] = True
+        bt.logging._logger._cache[20] = True
         super(Miner, self).__init__(config=config)
         self.fake = Faker()
 
@@ -63,7 +63,7 @@ class Miner(BaseMinerNeuron):
         The 'forward' function is a placeholder and should be overridden with logic that is appropriate for
         the miner's intended operation. This method demonstrates a basic transformation of input data.
         """
-        print(f"Received blockchain: {synapse.blockchain_json}")
+        bt.logging.info(f"Received blockchain: {synapse.blockchain_json}")
 
         blockchain = Blockchain.from_dict(json.loads(synapse.blockchain_json))
 
@@ -78,7 +78,7 @@ class Miner(BaseMinerNeuron):
         blockchain_json = json.dumps(blockchain.to_dict(), indent=4)
 
         synapse.blockchain_json = blockchain_json
-        print(f"New Blockchain: {synapse.blockchain_json}")
+        bt.logging.info(f"New Blockchain: {synapse.blockchain_json}")
         return synapse
 
     async def blacklist(

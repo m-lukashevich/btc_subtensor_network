@@ -28,7 +28,7 @@ from hash_system.blockchain import Blockchain
 
 class HashAPI(SubnetsAPI):
     def __init__(self, wallet: "bt.wallet"):
-        # bt.logging._logger._cache[20] = True
+        bt.logging._logger._cache[20] = True
         super().__init__(wallet)
         self.netuid = 1
         self.name = "dummy"

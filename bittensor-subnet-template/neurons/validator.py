@@ -41,7 +41,7 @@ class Validator(BaseValidatorNeuron):
     """
 
     def __init__(self, config=None):
-        # bt.logging._logger._cache[20] = True
+        bt.logging._logger._cache[20] = True
         super(Validator, self).__init__(config=config)
 
         bt.logging.info("load_state()")

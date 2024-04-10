@@ -44,11 +44,11 @@ echo "registering 2nd miner in subnet..."
 btcli subnet register --wallet.name miner2 --wallet.hotkey default --subtensor.chain_endpoint ws://127.0.0.1:9946 --subtensor.network local --no_prompt
 
 echo "Staking validator ..."
-btcli stake add --wallet.name validator --wallet.hotkey default --subtensor.chain_endpoint ws://127.0.0.1:9946 --subtensor.network local
+btcli stake add --wallet.name validator --wallet.hotkey default --subtensor.chain_endpoint ws://127.0.0.1:9946 --subtensor.network local --no_prompt
 
 echo "registering validator in the root subnet..."
-btcli root register --wallet.name validator --wallet.hotkey default --subtensor.chain_endpoint ws://127.0.0.1:9946 --subtensor.network local
+btcli root register --wallet.name validator --wallet.hotkey default --subtensor.chain_endpoint ws://127.0.0.1:9946 --subtensor.network local --no_prompt
 
 echo "boosting subnet..."
 # NOTE: it can be successfully applied after blockchain works for a while
-btcli root boost --netuid 1 --increase 1 --wallet.name validator --wallet.hotkey default --subtensor.chain_endpoint ws://127.0.0.1:9946 --subtensor.network local
+btcli root boost --netuid 1 --increase 1 --wallet.name validator --wallet.hotkey default --subtensor.chain_endpoint ws://127.0.0.1:9946 --subtensor.network local --no_prompt

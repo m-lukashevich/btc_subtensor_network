@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  bittensor_subnet:
+    container_name: bittensor_subnet
+    build:
+      dockerfile: Dockerfile
+    volumes:
+      - ./bittensor-subnet-template:/app/bittensor-subnet-template
+      - ./subtensor:/app/subtensor
+    environment:
+      - PYTHONPATH=/app/bittensor-subnet-template
